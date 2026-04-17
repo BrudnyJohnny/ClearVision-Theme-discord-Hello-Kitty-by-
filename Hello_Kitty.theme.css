@@ -1,0 +1,157 @@
+/**
+ * @name HelloKitty
+ * @author ClearVision Team (Edit: —͟͞͞★ 𝒟บ𝒟บŝ ★)
+ * @version 7.0.1
+ * @description Motyw w pełni przystosowany pod styl Hello Kitty (różowe akcenty, urocza czcionka i własne tło).
+ * @source https://github.com/ClearVision/ClearVision-v7
+ */
+
+/* IMPORT UROCZEJ CZCIONKI ORAZ GŁÓWNEGO KODU CLEARVISION */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+
+/* USTAWIENIA MOTYWU (HELLO KITTY EDITION) */
+:root {
+  /* AKCENTY KOLORYSTYCZNE - Zmienione na uroczy róż */
+  --main-color: #ff4d94; /* główny kolor akcentów [Hello Kitty Pink] */
+  --hover-color: #e6005c; /* kolor akcentów po najechaniu */
+  --success-color: #ff4d94; /* kolor sukcesu (zmieniony na róż) */
+  --danger-color: #982929; /* kolor błędu/niebezpieczeństwa */
+  
+  /* STATUS COLORS */
+  --online-color: #43b581; /* kolor statusu online */
+  --idle-color: #faa61a; /* kolor statusu zaraz wracam */
+  --dnd-color: #982929; /* kolor statusu nie przeszkadzać */
+  --streaming-color: #593695; /* kolor statusu streamowania */
+  --offline-color: #808080; /* kolor statusu offline */
+  
+  /* TŁO APLIKACJI - Twoje tło z Wallpapersafari */
+  --background-shading-percent: 100%; /* moc przyciemnienia tła */
+  --background-image: url('https://cdn.wallpapersafari.com/31/34/TvRuPx.jpg'); /* Twoje tło Hello Kitty */
+  --background-position: center; 
+  --background-size: cover; 
+  --background-attachment: fixed; 
+  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1)); 
+  
+  /* TŁA PROFILI I WYSKAKUJĄCYCH OKIENEK */
+  --user-popout-image: var(--background-image); 
+  --user-popout-position: var(--background-position); 
+  --user-popout-size: var(--background-size); 
+  --user-popout-attachment: var(--background-attachment); 
+  --user-popout-filter: var(--background-filter); 
+  
+  --user-modal-image: var(--background-image); 
+  --user-modal-position: var(--background-position); 
+  --user-modal-size: var(--background-size); 
+  --user-modal-attachment: var(--background-attachment); 
+  --user-modal-filter: var(--background-filter); 
+  
+  /* IKONA HOME (Możesz tu podać link do jakiejś ikony z Hello Kitty. Na razie zostawiłem domyślną ClearVision) */
+  --home-icon: url(https://cdn3.emoji.gg/emojis/5270_hello_kitty_dance.gif); 
+  --home-size: cover; 
+  
+  /* CZCIONKI - Użycie czcionki Nunito z moich poprzednich wersji */
+  --main-font: "Nunito", "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace; 
+  
+  /* KOLORY KANAŁÓW */
+  --channel-normal: var(--interactive-text-default); 
+  --channel-muted: var(--interactive-muted); 
+  --channel-hover: var(--interactive-text-hover); 
+  --channel-selected: var(--interactive-text-active); 
+  --channel-selected-bg: var(--main-color); 
+  --channel-unread: var(--main-color); 
+  --channel-unread-hover: var(--hover-color); 
+  
+  /* ACCESSIBILITY */
+  --focus-color: var(--main-color); 
+
+  /* Próba nadpisania ewentualnych zmiennych tekstowych ClearVision */
+  --cv-version: "" !important;
+}
+
+/* THEME SPECIFIC SHADING (Zostawione oryginalne ustawienia ClearVision dla idealnego wyglądu szkła) */
+
+/* LIGHT THEME */
+:is(.theme-light, .theme-dark .theme-light) {
+  --background-shading: rgba(252, 252, 252, 0.3);
+  --card-shading: rgba(252, 252, 252, 0.3); 
+  --popout-shading: rgba(252, 252, 252, 0.7); 
+  --modal-shading: rgba(252, 252, 252, 0.5); 
+  --input-shading: rgba(0, 0, 0, 0.3); 
+  --normal-text: #36363c; 
+  --muted-text: #75757e; 
+}
+
+/* ASH THEME */
+:is(.theme-dark, .theme-light .theme-dark) {
+  --background-shading: rgba(0, 0, 0, 0.4); 
+  --card-shading: rgba(0, 0, 0, 0.2); 
+  --popout-shading: rgba(0, 0, 0, 0.6); 
+  --modal-shading: rgba(0, 0, 0, 0.4); 
+  --input-shading: rgba(255, 255, 255, 0.05); 
+  --normal-text: #d8d8db; 
+  --muted-text: #aeaeb4; 
+}
+
+/* DARK THEME */
+:is(.theme-darker, .theme-light .theme-darker) {
+  --background-shading: rgba(0, 0, 0, 0.6); 
+  --card-shading: rgba(0, 0, 0, 0.3); 
+  --popout-shading: rgba(0, 0, 0, 0.7); 
+  --modal-shading: rgba(0, 0, 0, 0.5); 
+  --input-shading: rgba(255, 255, 255, 0.05); 
+  --normal-text: #fbfbfb; 
+  --muted-text: #94949c; 
+}
+
+/* ONYX THEME */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(0, 0, 0, 0.8); 
+  --card-shading: rgba(0, 0, 0, 0.4); 
+  --popout-shading: rgba(0, 0, 0, 0.8); 
+  --modal-shading: rgba(0, 0, 0, 0.6); 
+  --input-shading: rgba(255, 255, 255, 0.05); 
+  --normal-text: #dcdcde; 
+  --muted-text: #86868e; 
+}
+
+/* --- ZMIANA NAPISU CLEARVISION NA HELLO KITTY --- */
+
+/* 1. BRUTALNE UKRYCIE: Namierzenie samego miejsca paska (niezależnie od nazwy) i skasowanie starego tekstu */
+html body #app-mount [class*="typeWindows_"] > div:first-child::before,
+html body #app-mount [class*="typeWindows_"] > div:first-child::after,
+html body [class*="wordmark"]::before,
+html body [class*="wordmark"]::after {
+    content: "" !important;
+    display: none !important;
+}
+
+/* 2. DODANIE NOWEGO NAPISU: Aplikujemy go bezpośrednio w lewy górny róg aplikacji */
+html body #app-mount [class*="typeWindows_"] > div:first-child::after,
+html body [class*="wordmarkWindows_"]::after,
+html body [class^="wordmark_"]::after {
+    content: "Hello Kitty 🎀" !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 14px !important;
+    color: var(--main-color) !important;
+    font-family: var(--main-font) !important;
+    text-shadow: 0 0 5px rgba(255, 77, 148, 0.6) !important;
+    font-weight: 700 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 12px !important;
+    height: 100% !important;
+    width: 200px !important;
+    z-index: 9999 !important;
+}
+
+/* 3. Całkowite ukrycie oryginalnego logo Discorda z paska (żeby nie weszło pod nasz napis) */
+html body #app-mount [class*="typeWindows_"] > div:first-child svg,
+html body [class*="wordmark"] svg {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
